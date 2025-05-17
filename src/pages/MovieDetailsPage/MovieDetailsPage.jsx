@@ -1,14 +1,14 @@
 import styles from './MovieDetailsPage.module.css';
 
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { getMovieDetails } from '../../services/api';
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
-  const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backLink = location.state?.from || '/movies';
+  const [movie, setMovie] = useState(null);
+  const backLinkRef = useRef(location.state?.from || '/movies');
 
   useEffect(() => {
     getMovieDetails(movieId).then(setMovie);
@@ -18,7 +18,7 @@ function MovieDetailsPage() {
 
   return (
     <div className={styles.detailsPage}>
-      <Link to={backLink} className={styles.backButton}>
+      <Link to={backLinkRef.current} className={styles.backButton}>
         Go back
       </Link>
       <h2 className={styles.title}>{movie.title}</h2>
@@ -35,12 +35,12 @@ function MovieDetailsPage() {
       <p className={styles.text}>{movie.overview}</p>
       <ul className={styles.list}>
         <li className={styles.first_item}>
-          <Link to={`/movies/${movieId}/cast`} state={{ from: backLink }}>
+          <Link to={`/movies/${movieId}/cast`} state={{ from: backLinkRef }}>
             Cast
           </Link>
         </li>
         <li className={styles.second_item}>
-          <Link to={`/movies/${movieId}/reviews`} state={{ from: backLink }}>
+          <Link to={`/movies/${movieId}/reviews`} state={{ from: backLinkRef }}>
             Reviews
           </Link>
         </li>

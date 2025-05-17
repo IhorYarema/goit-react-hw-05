@@ -1,5 +1,5 @@
 import styles from './MoviesPage.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from '../../services/api';
 import MovieList from '../../components/MovieList/MovieList';
@@ -17,6 +17,21 @@ function MoviesPage() {
     setSearchParams({ query: value });
     searchMovies(value).then(setMovies);
   };
+
+  useEffect(() => {
+    if (!query) return;
+
+    async function fetchMovies() {
+      try {
+        const results = await searchMovies(query);
+        setMovies(results);
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      }
+    }
+
+    fetchMovies();
+  }, [query]);
 
   return (
     <div className={styles.page}>
