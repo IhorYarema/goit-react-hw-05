@@ -1,0 +1,16 @@
+.notFound {
+  text-align: center;
+  padding: 60px;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: #d9534f;
+}
+
+.link {
+  font-size: 18px;
+  color: #007bff;
+  text-decoration: underline;
+}

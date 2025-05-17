@@ -12,6 +12,7 @@ function MovieList({ movies }) {
         <li key={id} className={styles.item}>
           <Link to={`/movies/${id}`} state={{ from: location }}>
             <img
+              className={styles.image}
               src={
                 poster_path
                   ? `https://image.tmdb.org/t/p/w500${poster_path}`

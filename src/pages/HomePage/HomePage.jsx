@@ -11,8 +11,8 @@ function HomePage() {
   }, []);
 
   return (
-    <div className={styles.homePage}>
-      <h1 className={styles.title}>Trending Today</h1>
+    <div className={styles.page}>
+      <h1 className={styles.heading}>Trending Today</h1>
       <MovieList movies={movies} />
     </div>
   );

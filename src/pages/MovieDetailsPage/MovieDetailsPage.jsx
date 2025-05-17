@@ -18,7 +18,9 @@ function MovieDetailsPage() {
 
   return (
     <div className={styles.detailsPage}>
-      <Link to={backLink}>Go back</Link>
+      <Link to={backLink} className={styles.backButton}>
+        Go back
+      </Link>
       <h2 className={styles.title}>{movie.title}</h2>
       <img
         src={

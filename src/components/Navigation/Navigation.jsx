@@ -4,8 +4,12 @@ import styles from './Navigation.module.css';
 function Navigation() {
   return (
     <nav className={styles.nav}>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/movies">Movies</NavLink>
+      <NavLink className={styles.link} to="/">
+        Home
+      </NavLink>
+      <NavLink className={styles.link} to="/movies">
+        Movies
+      </NavLink>
     </nav>
   );
 }

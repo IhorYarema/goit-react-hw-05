@@ -19,7 +19,7 @@ function MoviesPage() {
   };
 
   return (
-    <div className={styles.moviesPage}>
+    <div className={styles.page}>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input name="query" defaultValue={query} className={styles.input} />
         <button type="submit" className={styles.btn}>

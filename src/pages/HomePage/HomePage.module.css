@@ -1,0 +1,11 @@
+.page {
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #222;
+}

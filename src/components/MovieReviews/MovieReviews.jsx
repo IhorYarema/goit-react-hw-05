@@ -13,11 +13,12 @@ function MovieReviews() {
   }, [movieId]);
 
   return (
-    <ul className={styles.list}>
-      {reviews.map(r => (
-        <li key={r.id} className={styles.item}>
-          <p className={styles.text}>
-            <strong>{r.author}</strong>: {r.content}
+    <ul className={styles.reviews}>
+      {reviews.map(review => (
+        <li key={review.id} className={styles.item}>
+          <p className={styles.content}>
+            <strong className={styles.author}>{review.author}</strong>:{' '}
+            {review.content}
           </p>
         </li>
       ))}
