@@ -1,2 +1,0 @@
-import{a as c,j as s,L as l}from"./index-DIP5Wvxs.js";const t={};function r({movies:o}){const m=c();return s.jsx("ul",{className:t.list,children:o.map(({id:e,title:a,poster_path:i})=>s.jsx("li",{className:t.item,children:s.jsxs(l,{to:`/movies/${e}`,state:{from:m},children:[s.jsx("img",{src:i?`https://image.tmdb.org/t/p/w500${i}`:"https://via.placeholder.com/250x375?text=No+Image",alt:a,width:"250",height:"375"}),s.jsx("p",{className:t.filmName,children:a})]})},e))})}export{r as M};
-//# sourceMappingURL=MovieList-C7j9x-wt.js.map
